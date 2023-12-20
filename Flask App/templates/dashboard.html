@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #82001A;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        footer {
+            background-color: #82001A;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Align pairs of figures with equal spacing */
+            margin-bottom: 40px;
+        }
+
+        .chart-container > div {
+            width: calc(50% - 20px); /* Set width to 50% minus margin */
+            margin-bottom: 20px;
+        }
+
+        .chart-container img {
+            width: 100%;
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>E-commerce Analysis</h1>
+    </header><br>
+    <br>
+
+
+    <!-- Button to go to data route -->
+    <div>
+        <a href="{{ url_for('display_data') }}" style="text-decoration: none;">
+            <button style="background-color: #82001A; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">View Data</button>
+        </a>
+    </div>
+    <br>
+    <div>
+        <a href="{{ url_for('logout') }}" style="text-decoration: none;">
+            <button style="background-color: #82001A; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">logout</button>
+        </a>
+    </div>
+    
+    </form>
+
+    <div class="container">
+        <div class="chart-container">
+            <!-- Group 1 -->
+            <div>
+                <h2>Order Status</h2>
+                <img src="{{ url_for('static', filename='order_status.png') }}" alt="Order Status Chart">
+            </div>
+            <div>
+                <h2>Product Categories</h2>
+                <img src="{{ url_for('static', filename='product_categories.png') }}" alt="Product Categories Chart">
+            </div>
+
+            <!-- Group 2 -->
+            <div>
+                <h2>Customer Analysis</h2>
+                <img src="{{ url_for('static', filename='customer_analysis.png') }}" alt="Customer Analysis Chart">
+            </div>
+            <div>
+                <h2>Seller Analysis</h2>
+                <img src="{{ url_for('static', filename='seller_analysis.png') }}" alt="Seller Analysis Chart">
+            </div>
+
+            <!-- Group 3 -->
+            <div>
+                <h2>Top Sellers by Total Sales</h2>
+                <img src="{{ url_for('static', filename='top_sellers.png') }}" alt="Top Sellers Chart">
+            </div>
+            <div>
+                <h2>Average Order Value by Product Category</h2>
+                <img src="{{ url_for('static', filename='average_order_value.png') }}" alt="Average Order Value Chart">
+            </div>
+
+            <!-- Group 4 -->
+            <div>
+                <h2>Customer Satisfaction</h2>
+                <img src="{{ url_for('static', filename='customer_satisfaction.png') }}" alt="Customer Satisfaction Chart">
+            </div>
+            <div>
+                <h2>Payment Methods</h2>
+                <img src="{{ url_for('static', filename='payment_methods.png') }}" alt="Payment Methods Chart">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 E-commerce Analysis
+    </footer>
+</body>
+</html>
